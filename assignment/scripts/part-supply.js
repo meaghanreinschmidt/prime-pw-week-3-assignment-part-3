@@ -24,7 +24,8 @@ console.log(supplyChanges[1]);
 //    array & console.log the value removed.
 console.log('4. Removed item:');
 
-console.log(supplyChanges.pop());
+let removeItem = supplyChanges.pop();
+console.log(removeItem);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Adding 25 to supplyChanges.');
@@ -48,7 +49,7 @@ for(let i = 0; i < supplyChanges.length; i++) {
         console.log('No Change.');
     }
     if (parts < 0) {
-        console.log('Removed ' + parts + ' parts.');
+        console.log('Removed ' + Math.abs(parts) + ' parts.');
     }
 }
 
@@ -65,7 +66,7 @@ for(let parts of supplyChanges) {
         console.log('No Change.');
     }
     if (parts < 0) {
-        console.log('Removed ' + parts + ' parts.');
+        console.log('Removed ' + Math.abs(parts) + ' parts.');
     }
 }
 
@@ -86,18 +87,31 @@ for (let i = 0; i < supplyChanges.length; i++) {
 //    Use a `while` loop to keep adding parts to boxes until
 //    no more boxes can be filled.
 //    Then log how many boxes were filled, and how many parts are left over.
+
 console.log('9. Filling boxes with a "while" loop');
 
-// let parts = 572;
-// let partsInEachBox = 7;
-// let boxes = 0
+let parts = 572;
+let partsInEachBox = 7;
+let boxes = 0;
 
-// while(parts > partsInEachBox) {
-//     console.log('In a box')
-//     parts--;
+while(parts > partsInEachBox) {
+    parts -= partsInEachBox;
+   boxes++;
+}
+console.log('left over', parts)
+console.log('boxes:', boxes);
+
+// 2. Write a function that takes in a number and logs "Hello World" 
+// that number of times (e.g. 2 would log "Hello World" two times).
+// NOTE: When console logging the same thing twice, you'll see a little number 
+// to the left of the log rather than the text twice.
+
+// function repeatHelloWorld(string, times) {
+//     let repeatedString = 'Hello World';
+//     while(times > 0);
+//     repeatedString += string;
+//     times--;
+//     return repeatedString;
 // }
-// console.log('This is how many parts are left over:')
-
-// I am stumped on this question. 
-
-
+// repeatHelloWorld('Hello World', 2);
+ 
